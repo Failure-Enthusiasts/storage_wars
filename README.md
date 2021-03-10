@@ -7,3 +7,7 @@
 3. `docker ps`
 4. `docker stop <container-id>`
 5. `docker rm <container-id>`
+
+You can also stop and remove all. 
+4. `docker stop $(docker ps -a -q)`
+5. `docker rm $(docker ps -a -q)`
