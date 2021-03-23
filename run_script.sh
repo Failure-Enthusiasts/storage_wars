@@ -16,9 +16,9 @@ fi
 
 docker network create --driver bridge alpine-net
 
-docker run -dit --name alpine1 --network alpine-net alpine ash
-docker run -dit --name alpine2 --network alpine-net alpine ash
-docker run -dit --name alpine3 alpine ash
+docker run -p 5000:5000 -dit --name alpine1 --network alpine-net alpine ash
+docker run -p 5001:5001 -dit --name alpine2 --network alpine-net alpine ash
+docker run -p 5002:5002 -dit --name alpine3 alpine ash
 
 # check that everything is up
 docker container ls
@@ -34,7 +34,7 @@ docker exec -it alpine1 echo "HELLO FROM THE OTHER SIDE"
 docker exec -it alpine1 ping -c 2 alpine2
 
 echo $'END PING TIME \n\n'
-
+read -p "Press any key to quit."
 # cleanup 
 docker container stop alpine1 alpine2 alpine3
 docker container rm alpine1 alpine2 alpine3

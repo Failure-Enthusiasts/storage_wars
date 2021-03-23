@@ -27,3 +27,7 @@ When done, you can stop and remove.
 For run_script.sh,
 
 * Use `chmod 777 run_script.sh`
+
+
+Extra:
+- curl --location --request GET '0.0.0.0:5000'
