@@ -1,7 +1,10 @@
 # storage_wars
 
+<<<<<<< HEAD
 # storage_wars
 
+=======
+>>>>>>> 4f12f66459ead2fa906bcd671ac4d6cab5b0d9a9
 ## This repo currently spins up a docker container that sleeps for 3000000 seconds. 
 
 The flow works like this:
@@ -30,6 +33,7 @@ For run_script.sh,
 
 * Use `chmod 777 run_script.sh`
 
+<<<<<<< HEAD
 # Bonus - Going Into One Container and Reaching Out to Another One 
 * exposes the port for the container with `docker build --tag python-docker .`
 * `docker run -d -p 5000:5000 <image>`
@@ -37,3 +41,8 @@ For run_script.sh,
 * go into the container with `docker exec -it <container-id> bash`
 * install curl `apt-get update` and `apt-get install curl` inside the container
 * `curl --location --request GET '0.0.0.0:5000'`
+=======
+
+Extra:
+- curl --location --request GET '0.0.0.0:5000'
+>>>>>>> 4f12f66459ead2fa906bcd671ac4d6cab5b0d9a9
