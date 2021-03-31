@@ -26,4 +26,4 @@ def home():
     
     # return "<h1> Distant Reading Archive</h1><p> my_hp = "+ str(my_hp) +" This site is a prototype API for distant reading of science fiction novels.</p>"
     return 'Hellllllo!'
-app.run()
+app.run(host="0.0.0.0")

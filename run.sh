@@ -12,12 +12,12 @@ else
   sleep 45 # wait 45s (maybe we can shorten it)
 fi
 
-docker network create --driver bridge alpine-net
+docker network create --driver bridge container-network
 
 docker build -t pizzaparty .
-docker run -dit --name container1 --expose 5000 --network alpine-net pizzaparty
-docker run -dit --name container2 --expose 5000 --network alpine-net pizzaparty
+docker run -d --name container1 --expose 5000 --network container-network pizzaparty
+docker run -d --name container2 --expose 5000 --network container-network pizzaparty
 
 # docker stop $(docker ps -a -q)
 # docker rm $(docker ps -a -q)
-# docker network rm alpine-net
+# docker network rm container-network
