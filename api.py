@@ -23,7 +23,7 @@ def home():
     f = open("my_hp.dat", "w")
     f.write(str(my_hp - 1))
     f.close()
-    
+    print("My HP:" + str(my_hp))
     # return "<h1> Distant Reading Archive</h1><p> my_hp = "+ str(my_hp) +" This site is a prototype API for distant reading of science fiction novels.</p>"
     return 'Hellllllo!'
 app.run(host="0.0.0.0")
