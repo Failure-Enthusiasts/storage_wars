@@ -19,8 +19,8 @@ hits = 0
 
 while hits < 3:
     attack_coord = input("Which coord to attack?")
-    y_attack_coord = int(attack_coord[0])
-    x_attack_coord = int(attack_coord[1])
+    x_attack_coord = int(attack_coord[0])
+    y_attack_coord = (matrix_size - 1) - int(attack_coord[1])
     if matrix[y_attack_coord][x_attack_coord] == 1:
         msg = "IT'S A HIT"
         matrix[y_attack_coord][x_attack_coord] = "x"
