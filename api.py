@@ -27,11 +27,18 @@ def fire():
     x = request.json["x"]
     y = request.json["y"]
     print(x)
-    isHit = matrix[x][y]
+    isHit = matrix[y][x]
     print(isHit)
     response = {
         "hit": bool(isHit),
         "coordinates": "{0}, {1}".format(x, y)
+    }
+    return response
+
+@app.route('/cheat', methods=['POST'])
+def cheat():
+    response = { 
+        "grid": str(array_matrix)
     }
     return response
 
