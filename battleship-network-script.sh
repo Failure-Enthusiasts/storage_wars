@@ -15,7 +15,7 @@ else
 fi
 
 # build the docker image
-docker build -t battleship-image .
+docker build -t battleship-image . --no-cache
 
 # create the network for the containers to talk 
 docker network create --driver bridge storagewars-net
@@ -24,21 +24,14 @@ docker network create --driver bridge storagewars-net
 docker run -dit --name container1 --network storagewars-net battleship-image
 docker run -dit --name container2 --network storagewars-net battleship-image
 
-
 # check that everything is up
 docker container ls
 docker network ls
 
-# hop into container2
-docker exec -it container2 echo "HELLO FROM THE OTHER SIDE"
+# docker container stop container1 container2
+# docker container rm container1 container2
+# docker network rm storagewars-net
+# docker container ls
+# docker network ls
 
-
-# cleanup the containers, and images
-echo $'CLEANUP \n\n'
-read -p "Press any key to quit."
-
-docker container stop container1 container2
-docker container rm container1 container2
-docker network rm storagewars-net
-docker container ls
-docker network ls
+#curl --location --request POST 'container2:5000/fire' --header 'Content-Type: application/json' --data-raw '{ "x": 1, "y": 2}'
