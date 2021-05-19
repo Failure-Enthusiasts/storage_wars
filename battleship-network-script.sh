@@ -28,10 +28,4 @@ docker run -dit --name container2 --network storagewars-net battleship-image
 docker container ls
 docker network ls
 
-# docker container stop container1 container2
-# docker container rm container1 container2
-# docker network rm storagewars-net
-# docker container ls
-# docker network ls
-
 #curl --location --request POST 'container2:5000/fire' --header 'Content-Type: application/json' --data-raw '{ "x": 1, "y": 2}'
