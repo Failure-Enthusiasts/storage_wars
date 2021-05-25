@@ -4,6 +4,8 @@ import numpy as np
 from numpy.random import default_rng
 import requests
 
+# api.py creates the board and ship, and you can update the board and ships through the API. 
+
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 

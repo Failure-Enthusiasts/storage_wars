@@ -1,6 +1,8 @@
 # storage_wars
 ## This repo currently spins up a docker container that sleeps for 3000000 seconds. 
 
+## Note: Still in progress. 
+
 The flow works like this:
 
 - You write a Dockerfile (the plans for the blueprint for our Container). 
