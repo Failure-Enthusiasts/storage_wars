@@ -15,7 +15,8 @@ else
 fi
 
 # build the docker image
-docker build -t battleship-image . --no-cache
+# docker build -t battleship-image . --no-cache 
+docker build -t battleship-image -f Dockerfile-API . --no-cache 
 
 # create the network for the containers to talk 
 docker network create --driver bridge storagewars-net
