@@ -13,4 +13,3 @@ RUN apt-get install -y iputils-ping
 # CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"] -- command from https://docs.docker.com/language/python/build-images/
 
 CMD ["python3", "api.py"]
-EXPOSE 80/tcp
