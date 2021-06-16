@@ -52,7 +52,7 @@ def attack():
 
 @app.route('/fire', methods=['POST'])
 def fire():
-    
+    # do we need this as an endpoint? Could it just be a fcn
     print(request.json)
     print("FIYAH")
 
