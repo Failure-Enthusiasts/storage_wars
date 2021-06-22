@@ -1,4 +1,5 @@
 import requests
+import json as jdump
 
 # script for the CLI 
 
@@ -10,25 +11,35 @@ import requests
 menu_options = [
     'attack',
     'cheat',
+    'hello'
 ]
 
 
 def run_command(choice):
     if choice == 'attack':
         x, y = input('Enter coordinates to attack, separated by a space.').split(' ')
-    
+        print(f"x: {x}")
+        print(f"y: {y}")
         url = 'http://0.0.0.0:6000/attack' #what's the container URL?
-        json = {"x": x, "y": y}
-    
-    
+        json = jdump.dumps({"x": x, "y": y})
+
         print(f"json: {json}")
 
         #FIXME: this request isn't quite right - API complains. Thought we solved this before? 
-        response = requests.post(url, json=json).json()
+        response = requests.post(url, json=json).text
         print(response)
 
         return response
+    elif choice == 'hello':
+        print('hello there')
+        # curl --location --request GET '127.0.0.1:6000/'   
+        url = 'http://0.0.0.0:6000/'
+        response = requests.get(url)
+        status = response.status_code
+        text = response.text
+        print(f"response{response} status:{status} text:{text}")
 
+        return text
 
 
 while True:
