@@ -98,7 +98,7 @@ def cheat():
 
 @app.route('/', methods=['GET'])
 def hello_world():
-    return 'Hello, World!'
+    return {'Hello, World!'} # allows CLI to use .json() to see JSON
 
 app.run(host="0.0.0.0")
 
