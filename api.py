@@ -44,6 +44,7 @@ def attack():
     
     print(f"json: {json}")
     response = requests.post(url, json=json).json()
+    
 
     #FIXME: Add grid response - just misses, hits
     

@@ -21,15 +21,21 @@ def run_command(choice):
         print(f"x: {x}")
         print(f"y: {y}")
         url = 'http://0.0.0.0:6000/attack' #what's the container URL?
-        json = jdump.dumps({"x": x, "y": y})
+        json = {"x": x, "y": y}
+        headers = {'Content-Type': 'application/json'}
 
         print(f"json: {json}")
 
         #FIXME: this request isn't quite right - API complains. Thought we solved this before? 
-        response = requests.post(url, json=json).text
-        print(response)
+        response = requests.post(url, data=json, headers=headers)
+        # print(response.raw)
+        print(type(response))
+        print(response.json)
+        
 
         return response
+
+
     elif choice == 'hello':
         print('hello there')
         # curl --location --request GET '127.0.0.1:6000/'   
